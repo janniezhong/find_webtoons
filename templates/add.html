@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'add.js') }}"></script>
+
+<div>
+    <div class = "add-title"> Add a New Webtoon</div>
+    <br>
+    <form>
+        <div class="add-basic-info">
+            <div class="add-subtitle">Starting with basic information: </div>
+
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title"> &nbsp&nbsp&nbsp&nbsp&nbsp
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author"> &nbsp&nbsp&nbsp&nbsp&nbsp
+            <label for="image">Link to Cover Art:</label>
+            <input type="url" id="image" name="image"> <br> <br>
+            <label for="summary">Summary:</label> <br>
+            <textarea id="summary" name="summary" rows="4" cols="75"> </textarea>
+
+        </div>
+        <br>
+
+        <div class="add-specific-info">
+            <div class="add-subtitle">Now onto specifics: </div>
+
+            <label for="rating">Rating <span class="accent-text">(out of 10)</span>:</label>
+            <input type="text" id="rating" name="rating" size="5"> &nbsp&nbsp&nbsp&nbsp&nbsp
+
+            <label for="complete"> Complete <span class="accent-text">(yes or no)</span>: </label>
+            <input list="complete_boolean" name="complete" id="complete">
+            <datalist id="complete_boolean">
+                <option value="yes">
+                <option value="no">
+            </datalist> &nbsp&nbsp&nbsp&nbsp&nbsp
+
+            <label for="ep1">Link to First Episode:</label>
+            <input type="url" id="ep1" name="ep1"> <br> <br>
+
+
+            <label for="ex-art">Links to Example Art:</label> <br>
+            <textarea id="ex-art" name="ex-art" rows="2" cols="50"
+                placeholder="ex. https://www.google.com/image &#13; https://yourimage.com"></textarea><br> <br>
+
+            <label for="reviews">Reviews:</label> <br>
+            <textarea id="reviews" name="reviews" rows="4" cols="75"
+                placeholder="ex. I hated this webtoon&#13;most beautiful art i've ever seen!"></textarea>
+
+        </div>
+
+        <br>
+
+        <div class="add-more">
+            <div class="add-subtitle">More Info: </div>
+
+            <label for="more-titles">More Like This Webtoon <span class="accent-text">(titles)</span>:</label> <br>
+            <textarea id="more-titles" name="more-titles" rows="1" cols="50" placeholder="ex. Your Throne, Freaking Romance, I Love Yoo"></textarea>
+
+        </div>
+        <br>
+    </form>
+
+    <button class="btn submit-button"> Submit</button>
+    <br>
+    <br>
+    <br>
+
+
+
+    <!-- Modal stuff -->
+    <div class="error-modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <div class="modal-text">
+                Error!
+                <br>
+                <ul id="errors_list">
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="discard-modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <div class="modal-text">
+                Error!
+                <br>
+                <ul id="errors_list">
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

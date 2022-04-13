@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'home.js') }}"></script>
+
+<script>
+    let most_popular = {{most_popular|tojson}} 
+</script>
+
+<div>
+<div class="home-title">Find Your New Favorite Webcomic!</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class = "col-md-3">
+            <img src="https://play-lh.googleusercontent.com/N0IoatmNSedA1OwGmjZauoziClJnAR3gatt5G78PDAHmZU8ytvyVj7wp2SfDFM15N0w" height="200px" width="auto" alt="Webtoon Logo">
+        </div>
+        <div class = "col-md-9 home-desc">
+            Welcome to <i>Find Webtoons</i>, where you’ll be able to find your next webcomic. Whether you’re looking for a new binge read or a steady weekly update, we’ll help you find what you’re looking for.
+        </div>
+    </div>
+    <br>
+    <div class = "home-subtitle">
+        <i>Not sure where to start? Here are some fan favorites:</i>
+    </div>
+    <div class = "container">
+        <div class = "row" id = "popularimg">
+            
+        </div>
+        <div class = "row" id = "populartext">
+            
+        </div>
+    </div>
+
+    <br>
+</div>
+
+</div>
+
+{% endblock %}
